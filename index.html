@@ -174,9 +174,12 @@
 
         .nav-container {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
             width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 2rem;
         }
 
         .logo {
@@ -475,7 +478,8 @@
             }
 
             .nav-links {
-                display: none;
+                gap: 1rem;
+                font-size: 0.85rem;
             }
 
             .section-title {
@@ -491,8 +495,15 @@
 <body>
     <!-- Navigation -->
     <nav id="navbar">
-        <div class="nav-container" style="justify-content: center;">
+        <div class="nav-container">
             <div class="logo">✨ Twilight Tinsel</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Packages</a></li>
+                <li><a href="#features">Why Choose Us</a></li>
+                <li><a href="#reviews">Gallery</a></li>
+                <li><a href="#contact">Book Now</a></li>
+            </ul>
         </div>
     </nav>
 
