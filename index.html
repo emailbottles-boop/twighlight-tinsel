@@ -46,7 +46,7 @@
             right: 0;
             bottom: 0;
             background: url('colors.PNG') center/cover no-repeat;
-            opacity: 0.4;
+            opacity: 0.7;
             animation: slowZoom 20s ease-in-out infinite alternate;
         }
 
@@ -496,6 +496,18 @@
         </div>
     </section>
 
+    <!-- Rainbow Tinsel Showcase Header -->
+    <section style="padding: 0; margin: 0; overflow: hidden;">
+        <div style="width: 100%; height: 400px; position: relative; overflow: hidden;">
+            <img src="colors.PNG" alt="Rainbow Hair Tinsel" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
+            <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15, 23, 42, 0.3) 0%, rgba(15, 23, 42, 0.6) 100%); display: flex; align-items: center; justify-content: center;">
+                <h2 style="font-family: 'Playfair Display', serif; font-size: 3.5rem; color: white; text-shadow: 0 4px 20px rgba(0, 0, 0, 0.7); text-align: center; padding: 2rem;">
+                    ✨ All Colors Available ✨
+                </h2>
+            </div>
+        </div>
+    </section>
+
     <!-- Products Section -->
     <section id="products">
         <h2 class="section-title">Tinsel Packages</h2>
@@ -576,6 +588,19 @@
                 💡 <strong>Pro Tip:</strong> Each bead contains 8 strands of tinsel for perfect, even application
             </p>
         </div>
+
+        <!-- Photo Gallery -->
+        <div style="margin-top: 4rem;">
+            <h3 style="font-size: 2rem; margin-bottom: 2rem; text-align: center; color: var(--primary);">✨ Our Work</h3>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <div style="border-radius: 20px; overflow: hidden; border: 2px solid rgba(6, 182, 212, 0.3); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);">
+                    <img src="colors.PNG" alt="Rainbow Tinsel Colors" style="width: 100%; height: 300px; object-fit: cover;">
+                </div>
+                <div style="border-radius: 20px; overflow: hidden; border: 2px solid rgba(6, 182, 212, 0.3); box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);">
+                    <img src="price.PNG" alt="Tinsel Pricing" style="width: 100%; height: 300px; object-fit: cover;">
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Features Section -->
@@ -625,43 +650,74 @@
     <!-- Reviews Section -->
     <section id="reviews">
         <h2 class="section-title">What Our Customers Say</h2>
-        <p class="section-subtitle">Join thousands of happy sparklers!</p>
+        <p class="section-subtitle">We love hearing from our sparklers!</p>
 
         <div class="testimonial-grid">
             <div class="testimonial-card">
                 <div class="stars">⭐⭐⭐⭐⭐</div>
-                <p class="testimonial-text">"Absolutely love these! The colors are so vibrant and they lasted through my entire vacation. Got so many compliments!"</p>
-                <p class="testimonial-author">- Sarah M.</p>
+                <p class="testimonial-text" style="min-height: 100px; display: flex; align-items: center; justify-content: center; color: rgba(248, 250, 252, 0.4);">
+                    Your review here
+                </p>
             </div>
 
             <div class="testimonial-card">
                 <div class="stars">⭐⭐⭐⭐⭐</div>
-                <p class="testimonial-text">"My daughter wanted rainbow hair for her birthday and this was perfect! Easy to apply and she looks like a magical unicorn."</p>
-                <p class="testimonial-author">- Jessica L.</p>
+                <p class="testimonial-text" style="min-height: 100px; display: flex; align-items: center; justify-content: center; color: rgba(248, 250, 252, 0.4);">
+                    Your review here
+                </p>
             </div>
 
             <div class="testimonial-card">
                 <div class="stars">⭐⭐⭐⭐⭐</div>
-                <p class="testimonial-text">"Great quality for the price! I've ordered three times now. The festival fusion pack is my favorite for concerts!"</p>
-                <p class="testimonial-author">- Emma R.</p>
+                <p class="testimonial-text" style="min-height: 100px; display: flex; align-items: center; justify-content: center; color: rgba(248, 250, 252, 0.4);">
+                    Your review here
+                </p>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact">
-        <h2 class="section-title">Get Your Sparkle On</h2>
-        <p class="section-subtitle">Ready to shine? Contact us to place your order!</p>
+        <h2 class="section-title">Book Your Sparkle</h2>
+        <p class="section-subtitle">Fill out the form below and we'll get back to you soon!</p>
 
-        <div style="text-align: center; margin-top: 3rem;">
-            <a href="/cdn-cgi/l/email-protection#fc938e98998e8fbc888b9590959b94888895928f9990d29f9391" class="cta-btn" style="margin: 0 1rem 1rem;">📧 Email Us</a>
-            <a href="tel:+1234567890" class="cta-btn" style="margin: 0 1rem 1rem;">📞 Call Us</a>
+        <div style="max-width: 700px; margin: 3rem auto; background: linear-gradient(145deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9)); padding: 3rem; border-radius: 20px; border: 1px solid rgba(6, 182, 212, 0.3);">
+            <form action="https://formspree.io/f/meeljdgy" method="POST">
+                <div style="margin-bottom: 1.5rem;">
+                    <label style="display: block; margin-bottom: 0.5rem; color: var(--primary); font-weight: 600;">Name *</label>
+                    <input type="text" name="name" required style="width: 100%; padding: 1rem; background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(6, 182, 212, 0.3); border-radius: 10px; color: white; font-size: 1rem;">
+                </div>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <label style="display: block; margin-bottom: 0.5rem; color: var(--primary); font-weight: 600;">Email *</label>
+                    <input type="email" name="email" required style="width: 100%; padding: 1rem; background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(6, 182, 212, 0.3); border-radius: 10px; color: white; font-size: 1rem;">
+                </div>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <label style="display: block; margin-bottom: 0.5rem; color: var(--primary); font-weight: 600;">Phone *</label>
+                    <input type="tel" name="phone" required style="width: 100%; padding: 1rem; background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(6, 182, 212, 0.3); border-radius: 10px; color: white; font-size: 1rem;">
+                </div>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <label style="display: block; margin-bottom: 0.5rem; color: var(--primary); font-weight: 600;">Package & Color Preferences</label>
+                    <textarea name="message" rows="4" placeholder="Example: Twilight Package, colors A, B, C" style="width: 100%; padding: 1rem; background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(6, 182, 212, 0.3); border-radius: 10px; color: white; font-size: 1rem; resize: vertical;"></textarea>
+                </div>
+
+                <div style="margin-bottom: 2rem;">
+                    <label style="display: block; margin-bottom: 0.5rem; color: var(--primary); font-weight: 600;">Availability *</label>
+                    <input type="text" name="availability" required placeholder="Example: Weekdays after 5pm, Saturdays anytime" style="width: 100%; padding: 1rem; background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(6, 182, 212, 0.3); border-radius: 10px; color: white; font-size: 1rem;">
+                </div>
+
+                <button type="submit" style="width: 100%; padding: 1.2rem; background: linear-gradient(135deg, var(--primary), var(--secondary)); color: white; border: none; border-radius: 50px; font-weight: 600; font-size: 1.1rem; cursor: pointer; transition: all 0.3s; box-shadow: 0 10px 30px rgba(6, 182, 212, 0.4);">
+                    ✨ Send Booking Request
+                </button>
+            </form>
         </div>
 
-        <div style="text-align: center; margin-top: 2rem; color: rgba(248, 250, 252, 0.7);">
-            <p>📦 Free shipping on orders over $50</p>
-            <p>💝 Gift wrapping available</p>
-            <p>✨ Bulk discounts for salons & stylists</p>
+        <div style="text-align: center; margin-top: 3rem; color: rgba(248, 250, 252, 0.7);">
+            <p style="font-size: 1.1rem; margin-bottom: 1rem;">📦 Free shipping on orders over $50</p>
+            <p style="font-size: 1.1rem; margin-bottom: 1rem;">💝 Gift wrapping available</p>
+            <p style="font-size: 1.1rem;">✨ Bulk discounts for salons & stylists</p>
         </div>
     </section>
 
@@ -703,4 +759,3 @@
                 if (target) {
                     target.scrollIntoView({
                         beh
-                        
