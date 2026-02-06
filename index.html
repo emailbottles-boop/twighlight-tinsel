@@ -37,6 +37,8 @@
             justify-content: center;
             text-align: center;
             overflow: hidden;
+            margin: 0;
+            padding: 0;
         }
 
         .hero-bg {
@@ -45,8 +47,10 @@
             left: 0;
             right: 0;
             bottom: 0;
+            width: 100%;
+            height: 100%;
             background: url('colors.PNG') center/cover no-repeat;
-            opacity: 0.7;
+            opacity: 0.5;
             animation: slowZoom 20s ease-in-out infinite alternate;
         }
 
@@ -258,8 +262,10 @@
         .product-image {
             width: 100%;
             height: 250px;
-            object-fit: cover;
-            background: linear-gradient(135deg, #ec4899, #8b5cf6, #3b82f6);
+            background-size: cover !important;
+            background-position: center !important;
+            background-repeat: no-repeat !important;
+            position: relative;
         }
 
         .product-info {
@@ -496,18 +502,6 @@
         </div>
     </section>
 
-    <!-- Rainbow Tinsel Showcase Header -->
-    <section style="padding: 0; margin: 0; overflow: hidden;">
-        <div style="width: 100%; height: 400px; position: relative; overflow: hidden;">
-            <img src="colors.PNG" alt="Rainbow Hair Tinsel" style="width: 100%; height: 100%; object-fit: cover; object-position: center;">
-            <div style="position: absolute; inset: 0; background: linear-gradient(180deg, rgba(15, 23, 42, 0.3) 0%, rgba(15, 23, 42, 0.6) 100%); display: flex; align-items: center; justify-content: center;">
-                <h2 style="font-family: 'Playfair Display', serif; font-size: 3.5rem; color: white; text-shadow: 0 4px 20px rgba(0, 0, 0, 0.7); text-align: center; padding: 2rem;">
-                    ✨ All Colors Available ✨
-                </h2>
-            </div>
-        </div>
-    </section>
-
     <!-- Products Section -->
     <section id="products">
         <h2 class="section-title">Tinsel Packages</h2>
@@ -516,7 +510,9 @@
         <div class="product-grid">
             <!-- Product 1: Glimmer Package -->
             <div class="product-card">
-                <div class="product-image" style="background: linear-gradient(135deg, #06b6d4, #14b8a6, #fbbf24);"></div>
+                <div class="product-image" style="background-image: url('yellow-tinsel.PNG'); background-size: cover; background-position: center;">
+                    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 0%, rgba(15, 23, 42, 0.6) 100%);"></div>
+                </div>
                 <div class="product-info">
                     <span class="product-badge">STARTER</span>
                     <h3 class="product-name">Glimmer Package</h3>
@@ -537,7 +533,9 @@
 
             <!-- Product 2: Midnight Package -->
             <div class="product-card">
-                <div class="product-image" style="background: linear-gradient(135deg, #1e1b4b, #312e81, #4c1d95, #6b21a8, #8b5cf6);"></div>
+                <div class="product-image" style="background-image: url('red-tinsel.PNG'); background-size: cover; background-position: center;">
+                    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 0%, rgba(15, 23, 42, 0.6) 100%);"></div>
+                </div>
                 <div class="product-info">
                     <span class="product-badge" style="background: linear-gradient(135deg, #8b5cf6, #06b6d4); color: white;">POPULAR</span>
                     <h3 class="product-name">Midnight Package</h3>
@@ -558,7 +556,9 @@
 
             <!-- Product 3: Twilight Package -->
             <div class="product-card">
-                <div class="product-image" style="background: linear-gradient(135deg, #06b6d4, #8b5cf6, #3b82f6, #10b981, #fbbf24, #f59e0b);"></div>
+                <div class="product-image" style="background-image: url('green-tinsel.PNG'); background-size: cover; background-position: center;">
+                    <div style="position: absolute; inset: 0; background: linear-gradient(180deg, transparent 0%, rgba(15, 23, 42, 0.6) 100%);"></div>
+                </div>
                 <div class="product-info">
                     <span class="product-badge" style="background: #fbbf24;">BEST VALUE</span>
                     <h3 class="product-name">Twilight Package</h3>
