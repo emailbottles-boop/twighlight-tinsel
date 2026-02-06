@@ -13,11 +13,12 @@
         }
 
         :root {
-            --primary: #d946ef;
+            --primary: #06b6d4;
             --secondary: #8b5cf6;
             --gold: #fbbf24;
             --dark: #0f172a;
             --light: #f8fafc;
+            --teal: #14b8a6;
         }
 
         body {
@@ -88,7 +89,7 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
-            text-shadow: 0 0 40px rgba(217, 70, 239, 0.3);
+            text-shadow: 0 0 40px rgba(6, 182, 212, 0.3);
             animation: shimmer 3s ease-in-out infinite;
         }
 
@@ -114,13 +115,13 @@
             font-weight: 600;
             font-size: 1.1rem;
             transition: all 0.3s;
-            box-shadow: 0 10px 30px rgba(217, 70, 239, 0.4);
+            box-shadow: 0 10px 30px rgba(6, 182, 212, 0.4);
             border: 2px solid transparent;
         }
 
         .cta-btn:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(217, 70, 239, 0.6);
+            box-shadow: 0 15px 40px rgba(6, 182, 212, 0.6);
             border-color: var(--gold);
         }
 
@@ -239,7 +240,7 @@
 
         .product-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(217, 70, 239, 0.3);
+            box-shadow: 0 20px 40px rgba(6, 182, 212, 0.3);
             border-color: var(--primary);
         }
 
@@ -339,12 +340,12 @@
 
         .buy-btn:hover {
             transform: scale(1.05);
-            box-shadow: 0 10px 25px rgba(217, 70, 239, 0.4);
+            box-shadow: 0 10px 25px rgba(6, 182, 212, 0.4);
         }
 
         /* Features Section */
         .features {
-            background: linear-gradient(135deg, rgba(217, 70, 239, 0.05), rgba(139, 92, 246, 0.05));
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.05), rgba(139, 92, 246, 0.05));
             border-radius: 30px;
             padding: 4rem 2rem;
             margin: 4rem 0;
@@ -503,7 +504,7 @@
         <div class="product-grid">
             <!-- Product 1: Glimmer Package -->
             <div class="product-card">
-                <div class="product-image" style="background: linear-gradient(135deg, #ec4899, #f472b6, #fbbf24);"></div>
+                <div class="product-image" style="background: linear-gradient(135deg, #06b6d4, #14b8a6, #fbbf24);"></div>
                 <div class="product-info">
                     <span class="product-badge">STARTER</span>
                     <h3 class="product-name">Glimmer Package</h3>
@@ -526,7 +527,7 @@
             <div class="product-card">
                 <div class="product-image" style="background: linear-gradient(135deg, #1e1b4b, #312e81, #4c1d95, #6b21a8, #8b5cf6);"></div>
                 <div class="product-info">
-                    <span class="product-badge" style="background: linear-gradient(135deg, #8b5cf6, #d946ef); color: white;">POPULAR</span>
+                    <span class="product-badge" style="background: linear-gradient(135deg, #8b5cf6, #06b6d4); color: white;">POPULAR</span>
                     <h3 class="product-name">Midnight Package</h3>
                     <p class="product-description">More strands for maximum sparkle and longer-lasting shine</p>
                     <ul class="product-features">
@@ -545,7 +546,7 @@
 
             <!-- Product 3: Twilight Package -->
             <div class="product-card">
-                <div class="product-image" style="background: linear-gradient(135deg, #ec4899, #8b5cf6, #3b82f6, #10b981, #fbbf24, #f59e0b);"></div>
+                <div class="product-image" style="background: linear-gradient(135deg, #06b6d4, #8b5cf6, #3b82f6, #10b981, #fbbf24, #f59e0b);"></div>
                 <div class="product-info">
                     <span class="product-badge" style="background: #fbbf24;">BEST VALUE</span>
                     <h3 class="product-name">Twilight Package</h3>
@@ -566,7 +567,7 @@
         </div>
 
         <!-- Booking Info -->
-        <div style="background: linear-gradient(135deg, rgba(217, 70, 239, 0.1), rgba(139, 92, 246, 0.1)); border-radius: 20px; padding: 3rem; margin-top: 4rem; text-align: center; border: 1px solid rgba(139, 92, 246, 0.3);">
+        <div style="background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(139, 92, 246, 0.1)); border-radius: 20px; padding: 3rem; margin-top: 4rem; text-align: center; border: 1px solid rgba(6, 182, 212, 0.3);">
             <h3 style="font-size: 2rem; margin-bottom: 1rem; color: var(--primary);">📝 How to Order</h3>
             <p style="font-size: 1.2rem; color: rgba(248, 250, 252, 0.9); max-width: 700px; margin: 0 auto; line-height: 1.8;">
                 When inquiring to book, please include which package you would like as well as which color(s) you prefer using the letter from our color options chart!
@@ -702,3 +703,4 @@
                 if (target) {
                     target.scrollIntoView({
                         beh
+                        
