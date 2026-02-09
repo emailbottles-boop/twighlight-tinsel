@@ -1276,18 +1276,22 @@
         const dots = document.querySelectorAll('.dot');
 
         function navigateTo(pageIndex) {
+            if (typeof event !== 'undefined') {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+            
             if (isMobile) {
                 currentPage = pageIndex;
                 updatePage();
-                return false;
             } else {
                 // Desktop: smooth scroll to section
                 const pages = document.querySelectorAll('.page');
                 if (pages[pageIndex]) {
                     pages[pageIndex].scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
-                return false;
             }
+            return false;
         }
 
         function updatePage() {
@@ -1302,6 +1306,10 @@
         }
 
         if (isMobile) {
+            // Initialize to home page
+            currentPage = 0;
+            updatePage();
+            
             // Improved mobile swipe navigation
             let touchStartX = 0;
             let touchEndX = 0;
