@@ -1269,22 +1269,9 @@
     </div>
 
     <script>
-        // Force mobile to start at home immediately
-        document.addEventListener('DOMContentLoaded', function() {
-            const isMobileCheck = window.innerWidth <= 768;
-            if (isMobileCheck) {
-                const container = document.getElementById('swipeContainer');
-                if (container) {
-                    container.style.transform = 'translateX(0vw)';
-                }
-            }
-        });
-
         const isMobile = window.innerWidth <= 768;
         let currentPage = 0;
         const totalPages = 5;
-        const container = document.getElementById('swipeContainer');
-        const dots = document.querySelectorAll('.dot');
 
         function navigateTo(pageIndex) {
             if (typeof event !== 'undefined') {
@@ -1292,9 +1279,22 @@
                 event.stopPropagation();
             }
             
+            currentPage = pageIndex;
+            
             if (isMobile) {
-                currentPage = pageIndex;
-                updatePage();
+                const container = document.getElementById('swipeContainer');
+                if (container) {
+                    const offset = -currentPage * 100;
+                    container.style.transform = `translateX(${offset}vw)`;
+                }
+                
+                const dots = document.querySelectorAll('.dot');
+                dots.forEach((dot, index) => {
+                    dot.classList.remove('active');
+                    if (index === currentPage) {
+                        dot.classList.add('active');
+                    }
+                });
             } else {
                 // Desktop: smooth scroll to section
                 const pages = document.querySelectorAll('.page');
@@ -1308,85 +1308,117 @@
         function updatePage() {
             if (!isMobile) return;
             
-            const offset = -currentPage * 100;
-            container.style.transform = `translateX(${offset}vw)`;
+            const container = document.getElementById('swipeContainer');
+            if (container) {
+                const offset = -currentPage * 100;
+                container.style.transform = `translateX(${offset}vw)`;
+            }
             
+            const dots = document.querySelectorAll('.dot');
             dots.forEach((dot, index) => {
-                dot.classList.toggle('active', index === currentPage);
+                dot.classList.remove('active');
+                if (index === currentPage) {
+                    dot.classList.add('active');
+                }
             });
         }
 
-        if (isMobile) {
-            // Improved mobile swipe navigation
-            let touchStartX = 0;
-            let touchEndX = 0;
-            let touchStartY = 0;
-            let touchEndY = 0;
-            let isDragging = false;
-
-            container.addEventListener('touchstart', (e) => {
-                touchStartX = e.changedTouches[0].screenX;
-                touchStartY = e.changedTouches[0].screenY;
-                isDragging = false;
-            }, { passive: true });
-
-            container.addEventListener('touchmove', (e) => {
-                touchEndX = e.changedTouches[0].screenX;
-                touchEndY = e.changedTouches[0].screenY;
-                
-                const deltaX = Math.abs(touchEndX - touchStartX);
-                const deltaY = Math.abs(touchEndY - touchStartY);
-                
-                // Only start dragging if horizontal movement is greater than vertical
-                if (deltaX > deltaY && deltaX > 10) {
-                    isDragging = true;
+        // Initialize immediately when DOM is ready
+        document.addEventListener('DOMContentLoaded', function() {
+            currentPage = 0;
+            
+            if (isMobile) {
+                const container = document.getElementById('swipeContainer');
+                if (container) {
+                    container.style.transform = 'translateX(0vw)';
                 }
-            }, { passive: true });
+                const dots = document.querySelectorAll('.dot');
+                dots.forEach((dot, index) => {
+                    dot.classList.remove('active');
+                    if (index === 0) {
+                        dot.classList.add('active');
+                    }
+                });
+            }
+        });
 
-            container.addEventListener('touchend', (e) => {
-                if (!isDragging) return;
+        if (isMobile) {
+            // Wait for DOM to be ready
+            document.addEventListener('DOMContentLoaded', function() {
+                const container = document.getElementById('swipeContainer');
+                const dots = document.querySelectorAll('.dot');
                 
-                touchEndX = e.changedTouches[0].screenX;
-                handleSwipe();
-            }, { passive: true });
+                // Improved mobile swipe navigation
+                let touchStartX = 0;
+                let touchEndX = 0;
+                let touchStartY = 0;
+                let touchEndY = 0;
+                let isDragging = false;
 
-            function handleSwipe() {
-                const swipeThreshold = 75; // Increased threshold for better control
-                const diff = touchStartX - touchEndX;
+                container.addEventListener('touchstart', (e) => {
+                    touchStartX = e.changedTouches[0].screenX;
+                    touchStartY = e.changedTouches[0].screenY;
+                    isDragging = false;
+                }, { passive: true });
 
-                if (Math.abs(diff) > swipeThreshold) {
-                    if (diff > 0 && currentPage < totalPages - 1) {
-                        // Swipe left - next page
-                        currentPage++;
-                        updatePage();
-                    } else if (diff < 0 && currentPage > 0) {
-                        // Swipe right - previous page
-                        currentPage--;
-                        updatePage();
+                container.addEventListener('touchmove', (e) => {
+                    touchEndX = e.changedTouches[0].screenX;
+                    touchEndY = e.changedTouches[0].screenY;
+                    
+                    const deltaX = Math.abs(touchEndX - touchStartX);
+                    const deltaY = Math.abs(touchEndY - touchStartY);
+                    
+                    // Only start dragging if horizontal movement is greater than vertical
+                    if (deltaX > deltaY && deltaX > 10) {
+                        isDragging = true;
+                    }
+                }, { passive: true });
+
+                container.addEventListener('touchend', (e) => {
+                    if (!isDragging) return;
+                    
+                    touchEndX = e.changedTouches[0].screenX;
+                    handleSwipe();
+                }, { passive: true });
+
+                function handleSwipe() {
+                    const swipeThreshold = 75;
+                    const diff = touchStartX - touchEndX;
+
+                    if (Math.abs(diff) > swipeThreshold) {
+                        if (diff > 0 && currentPage < totalPages - 1) {
+                            // Swipe left - next page
+                            currentPage++;
+                            updatePage();
+                        } else if (diff < 0 && currentPage > 0) {
+                            // Swipe right - previous page
+                            currentPage--;
+                            updatePage();
+                        }
                     }
                 }
-            }
 
-            // Dots navigation
-            dots.forEach((dot, index) => {
-                dot.addEventListener('click', () => {
-                    currentPage = index;
-                    updatePage();
-                });
-            });
-
-            // Prevent page scrolling interfering with swipe on pages with content
-            const pages = document.querySelectorAll('.page');
-            pages.forEach((page) => {
-                let isScrolling = false;
-                
-                page.addEventListener('scroll', () => {
-                    isScrolling = true;
+                // Dots navigation
+                dots.forEach((dot, index) => {
+                    dot.addEventListener('click', () => {
+                        currentPage = index;
+                        updatePage();
+                    });
                 });
 
-                page.addEventListener('touchstart', () => {
-                    isScrolling = false;
-                }, { passive: true });
+                // Prevent page scrolling interfering with swipe on pages with content
+                const pages = document.querySelectorAll('.page');
+                pages.forEach((page) => {
+                    let isScrolling = false;
+                    
+                    page.addEventListener('scroll', () => {
+                        isScrolling = true;
+                    });
+
+                    page.addEventListener('touchstart', () => {
+                        isScrolling = false;
+                    }, { passive: true });
+                });
             });
         } else {
             // Desktop: Normal scroll with navbar
