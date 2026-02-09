@@ -332,7 +332,7 @@
         @media (max-width: 768px) {
             section {
                 padding: 2rem 1rem;
-                padding-top: 5rem;
+                padding-top: 7rem;
             }
         }
 
@@ -387,6 +387,7 @@
             overflow: hidden;
             border: 1px solid rgba(6, 182, 212, 0.2);
             transition: all 0.3s;
+            position: relative;
         }
 
         @media (max-width: 768px) {
@@ -402,38 +403,11 @@
         }
 
         .product-image {
-            width: 100%;
-            height: 250px;
-            background-size: cover;
-            background-position: center;
-            position: relative;
-        }
-
-        @media (max-width: 768px) {
-            .product-image {
-                height: 100px;
-            }
+            display: none;
         }
 
         .product-badge {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            background: var(--gold);
-            color: var(--dark);
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-
-        @media (max-width: 768px) {
-            .product-badge {
-                top: 0.5rem;
-                right: 0.5rem;
-                padding: 0.3rem 0.7rem;
-                font-size: 0.7rem;
-            }
+            display: none;
         }
 
         .product-info {
@@ -442,7 +416,7 @@
 
         @media (max-width: 768px) {
             .product-info {
-                padding: 0.75rem;
+                padding: 1rem 0.75rem;
             }
         }
 
@@ -487,13 +461,6 @@
             padding: 0.5rem 0;
             color: rgba(248, 250, 252, 0.8);
             font-size: 0.95rem;
-        }
-
-        @media (max-width: 768px) {
-            .product-features li {
-                padding: 0.25rem 0;
-                font-size: 0.8rem;
-            }
         }
 
         .product-features li::before {
@@ -1048,10 +1015,8 @@
 
             <div class="product-grid">
                 <div class="product-card">
-                    <div class="product-image" style="background-image: url('yellow-gold.PNG');">
-                        <span class="product-badge">STARTER</span>
-                    </div>
                     <div class="product-info">
+                        <span class="product-badge">STARTER</span>
                         <h3 class="product-name">Glimmer Package</h3>
                         <p class="product-description">Perfect for trying out tinsel or adding a subtle sparkle</p>
                         <ul class="product-features">
@@ -1069,10 +1034,8 @@
                 </div>
 
                 <div class="product-card">
-                    <div class="product-image" style="background-image: url('Red.PNG');">
-                        <span class="product-badge" style="background: linear-gradient(135deg, #8b5cf6, #06b6d4); color: white;">POPULAR</span>
-                    </div>
                     <div class="product-info">
+                        <span class="product-badge" style="background: linear-gradient(135deg, #8b5cf6, #06b6d4); color: white;">POPULAR</span>
                         <h3 class="product-name">Midnight Package</h3>
                         <p class="product-description">More strands for maximum sparkle and longer-lasting shine</p>
                         <ul class="product-features">
@@ -1090,10 +1053,8 @@
                 </div>
 
                 <div class="product-card">
-                    <div class="product-image" style="background-image: url('Capture.PNG'); background-size: 180%; background-position: center;">
-                        <span class="product-badge">BEST VALUE</span>
-                    </div>
                     <div class="product-info">
+                        <span class="product-badge">BEST VALUE</span>
                         <h3 class="product-name">Twilight Package</h3>
                         <p class="product-description">Full coverage for maximum impact - our most popular choice!</p>
                         <ul class="product-features">
