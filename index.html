@@ -161,6 +161,15 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
+        
+        .logo::before {
+            content: '✨ ';
+            -webkit-background-clip: initial;
+            -webkit-text-fill-color: initial;
+            background: none;
+            color: var(--gold);
+            font-family: 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji', sans-serif;
+        }
 
         .nav-links {
             display: flex;
@@ -457,7 +466,7 @@
 
         @media (max-width: 768px) {
             .product-features {
-                display: none;
+                display: none !important;
             }
         }
 
@@ -985,7 +994,7 @@
     <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-container">
-            <div class="logo">✨ Twilight Tinsel</div>
+            <div class="logo">Twilight Tinsel</div>
             <ul class="nav-links">
                 <li><a href="#home" onclick="return navigateTo(0)">Home</a></li>
                 <li><a href="#products" onclick="return navigateTo(1)">Packages</a></li>
