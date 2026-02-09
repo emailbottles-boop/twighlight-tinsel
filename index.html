@@ -1269,6 +1269,17 @@
     </div>
 
     <script>
+        // Force mobile to start at home immediately
+        document.addEventListener('DOMContentLoaded', function() {
+            const isMobileCheck = window.innerWidth <= 768;
+            if (isMobileCheck) {
+                const container = document.getElementById('swipeContainer');
+                if (container) {
+                    container.style.transform = 'translateX(0vw)';
+                }
+            }
+        });
+
         const isMobile = window.innerWidth <= 768;
         let currentPage = 0;
         const totalPages = 5;
@@ -1306,10 +1317,6 @@
         }
 
         if (isMobile) {
-            // Initialize to home page
-            currentPage = 0;
-            updatePage();
-            
             // Improved mobile swipe navigation
             let touchStartX = 0;
             let touchEndX = 0;
@@ -1395,6 +1402,19 @@
 
         // Entrance Animation - Just the shimmer sweep, no sparkles
         window.addEventListener('load', function() {
+            // Force reset to home page on mobile
+            if (isMobile) {
+                currentPage = 0;
+                const container = document.getElementById('swipeContainer');
+                if (container) {
+                    container.style.transform = 'translateX(0vw)';
+                }
+                const dots = document.querySelectorAll('.dot');
+                dots.forEach((dot, index) => {
+                    dot.classList.toggle('active', index === 0);
+                });
+            }
+            
             // Remove shimmer after it completes
             setTimeout(() => {
                 const shimmer = document.getElementById('shimmer');
