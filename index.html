@@ -243,7 +243,7 @@
             font-size: 5rem;
             font-weight: 700;
             margin-bottom: 1rem;
-            background: linear-gradient(135deg, var(--primary), var(--gold));
+            background: linear-gradient(135deg, var(--primary), var(--secondary), var(--gold));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
@@ -983,11 +983,11 @@
         <div class="nav-container">
             <div class="logo">✨ Twilight Tinsel</div>
             <ul class="nav-links">
-                <li><a href="#home" onclick="navigateTo(0)">Home</a></li>
-                <li><a href="#products" onclick="navigateTo(1)">Packages</a></li>
-                <li><a href="#features" onclick="navigateTo(2)">About</a></li>
-                <li><a href="#reviews" onclick="navigateTo(3)">Colors</a></li>
-                <li><a href="#contact" onclick="navigateTo(4)">Book</a></li>
+                <li><a href="#home" onclick="return navigateTo(0)">Home</a></li>
+                <li><a href="#products" onclick="return navigateTo(1)">Packages</a></li>
+                <li><a href="#features" onclick="return navigateTo(2)">About</a></li>
+                <li><a href="#reviews" onclick="return navigateTo(3)">Colors</a></li>
+                <li><a href="#contact" onclick="return navigateTo(4)">Book</a></li>
             </ul>
         </div>
     </nav>
@@ -1002,7 +1002,7 @@
                     <h1>Twilight Tinsel</h1>
                     <p>Add sparkle and shine to your hair with premium hair tinsel</p>
                     <div class="location-badge">📍 Based in Bellevue, WA</div>
-                    <a href="#products" onclick="navigateTo(1)" class="cta-btn">Shop Now</a>
+                    <a href="#products" onclick="return navigateTo(1)" class="cta-btn">Shop Now</a>
                 </div>
                 <div class="swipe-hint">← Swipe to explore →</div>
             </div>
@@ -1028,7 +1028,7 @@
                         </ul>
                         <div class="price-section">
                             <div class="price">$15</div>
-                            <a href="#contact" onclick="navigateTo(4)" class="buy-btn">Order Now</a>
+                            <a href="#contact" onclick="return navigateTo(4)" class="buy-btn">Order Now</a>
                         </div>
                     </div>
                 </div>
@@ -1047,7 +1047,7 @@
                         </ul>
                         <div class="price-section">
                             <div class="price">$35</div>
-                            <a href="#contact" onclick="navigateTo(4)" class="buy-btn">Order Now</a>
+                            <a href="#contact" onclick="return navigateTo(4)" class="buy-btn">Order Now</a>
                         </div>
                     </div>
                 </div>
@@ -1066,7 +1066,7 @@
                         </ul>
                         <div class="price-section">
                             <div class="price">$50</div>
-                            <a href="#contact" onclick="navigateTo(4)" class="buy-btn">Order Now</a>
+                            <a href="#contact" onclick="return navigateTo(4)" class="buy-btn">Order Now</a>
                         </div>
                     </div>
                 </div>
@@ -1103,97 +1103,97 @@
 
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <a href="#contact" onclick="navigateTo(4)">
+                    <a href="#contact" onclick="return navigateTo(4)">
                         <img src="Pink A.PNG" alt="Pink A">
                         <div class="color-label">Pink - A</div>
                     </a>
                 </div>
                 <div class="gallery-item">
-                    <a href="#contact" onclick="navigateTo(4)">
+                    <a href="#contact" onclick="return navigateTo(4)">
                         <img src="Pink B.PNG" alt="Pink B">
                         <div class="color-label">Pink - B</div>
                     </a>
                 </div>
                 <div class="gallery-item">
-                    <a href="#contact" onclick="navigateTo(4)">
+                    <a href="#contact" onclick="return navigateTo(4)">
                         <img src="Pink C.PNG" alt="Pink C">
                         <div class="color-label">Pink - C</div>
                     </a>
                 </div>
                 <div class="gallery-item">
-                    <a href="#contact" onclick="navigateTo(4)">
+                    <a href="#contact" onclick="return navigateTo(4)">
                         <img src="Red.PNG" alt="Red D">
                         <div class="color-label">Red - D</div>
                     </a>
                 </div>
                 <div class="gallery-item">
-                    <a href="#contact" onclick="navigateTo(4)">
+                    <a href="#contact" onclick="return navigateTo(4)">
                         <img src="Yellow E.PNG" alt="Yellow E">
                         <div class="color-label">Yellow - E</div>
                     </a>
                 </div>
                 <div class="gallery-item">
-                    <a href="#contact" onclick="navigateTo(4)">
+                    <a href="#contact" onclick="return navigateTo(4)">
                         <img src="Yellow f.PNG" alt="Yellow F">
                         <div class="color-label">Yellow - F</div>
                     </a>
                 </div>
                 <div class="gallery-item">
-                    <a href="#contact" onclick="navigateTo(4)">
+                    <a href="#contact" onclick="return navigateTo(4)">
                         <img src="Capture.PNG" alt="Green G">
                         <div class="color-label">Green - G</div>
                     </a>
                 </div>
                 <div class="gallery-item">
-                    <a href="#contact" onclick="navigateTo(4)">
+                    <a href="#contact" onclick="return navigateTo(4)">
                         <img src="Blue H.PNG" alt="Blue H">
                         <div class="color-label">Blue - H</div>
                     </a>
                 </div>
                 <div class="gallery-item">
-                    <a href="#contact" onclick="navigateTo(4)">
+                    <a href="#contact" onclick="return navigateTo(4)">
                         <img src="Blue I.PNG" alt="Blue I">
                         <div class="color-label">Blue - I</div>
                     </a>
                 </div>
                 <div class="gallery-item">
-                    <a href="#contact" onclick="navigateTo(4)">
+                    <a href="#contact" onclick="return navigateTo(4)">
                         <img src="Purple J.PNG" alt="Purple J">
                         <div class="color-label">Purple - J</div>
                     </a>
                 </div>
                 <div class="gallery-item">
-                    <a href="#contact" onclick="navigateTo(4)">
+                    <a href="#contact" onclick="return navigateTo(4)">
                         <img src="Gold K.PNG" alt="Gold K">
                         <div class="color-label">Gold - K</div>
                     </a>
                 </div>
                 <div class="gallery-item">
-                    <a href="#contact" onclick="navigateTo(4)">
+                    <a href="#contact" onclick="return navigateTo(4)">
                         <img src="Black L.PNG" alt="Black L">
                         <div class="color-label">Black - L</div>
                     </a>
                 </div>
                 <div class="gallery-item">
-                    <a href="#contact" onclick="navigateTo(4)">
+                    <a href="#contact" onclick="return navigateTo(4)">
                         <img src="Silver M.PNG" alt="Silver M">
                         <div class="color-label">Silver - M</div>
                     </a>
                 </div>
                 <div class="gallery-item">
-                    <a href="#contact" onclick="navigateTo(4)">
+                    <a href="#contact" onclick="return navigateTo(4)">
                         <img src="Irrrridecent_N.PNG" alt="Iridescent N">
                         <div class="color-label">Iridescent - N</div>
                     </a>
                 </div>
                 <div class="gallery-item">
-                    <a href="#contact" onclick="navigateTo(4)">
+                    <a href="#contact" onclick="return navigateTo(4)">
                         <img src="Rainbow O.PNG" alt="Rainbow O">
                         <div class="color-label">Rainbow - O</div>
                     </a>
                 </div>
                 <div class="gallery-item">
-                    <a href="#contact" onclick="navigateTo(4)">
+                    <a href="#contact" onclick="return navigateTo(4)">
                         <img src="Rainbow P.PNG" alt="Rainbow P">
                         <div class="color-label">Rainbow - P</div>
                     </a>
@@ -1279,14 +1279,15 @@
             if (isMobile) {
                 currentPage = pageIndex;
                 updatePage();
+                return false;
             } else {
                 // Desktop: smooth scroll to section
                 const pages = document.querySelectorAll('.page');
                 if (pages[pageIndex]) {
                     pages[pageIndex].scrollIntoView({ behavior: 'smooth', block: 'start' });
                 }
+                return false;
             }
-            return false;
         }
 
         function updatePage() {
