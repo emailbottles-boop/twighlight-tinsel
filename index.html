@@ -56,27 +56,32 @@
             }
         }
 
-        /* Mobile: Swipe navigation */
+        /* Mobile: Improved swipe navigation */
         @media (max-width: 768px) {
             html, body {
                 height: 100%;
                 overflow: hidden;
                 position: fixed;
+                touch-action: pan-y;
             }
 
             .swipe-container {
                 width: 100%;
                 height: 100vh;
                 display: flex;
-                transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+                transition: transform 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
                 will-change: transform;
+                touch-action: pan-x;
             }
 
             .page {
                 min-width: 100vw;
+                max-width: 100vw;
                 height: 100vh;
                 overflow-y: auto;
+                overflow-x: hidden;
                 -webkit-overflow-scrolling: touch;
+                flex-shrink: 0;
             }
 
             .page-dots {
@@ -99,6 +104,7 @@
                 border-radius: 50%;
                 background: rgba(248, 250, 252, 0.3);
                 transition: all 0.3s;
+                cursor: pointer;
             }
 
             .dot.active {
@@ -110,16 +116,6 @@
 
         /* Desktop: Hide mobile elements */
         @media (min-width: 769px) {
-            .swipe-container {
-                display: block;
-                width: 100%;
-            }
-
-            .page {
-                min-width: 100%;
-                height: auto;
-            }
-
             .page-dots {
                 display: none;
             }
@@ -214,7 +210,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('colors.PNG');
+            background-image: url('Capture.PNG');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -499,20 +495,20 @@
             line-height: 1.6;
         }
 
-        /* Gallery */
+        /* Gallery - Updated with color labels */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
             margin-top: 3rem;
-            max-width: 800px;
+            max-width: 1200px;
             margin-left: auto;
             margin-right: auto;
         }
 
         @media (max-width: 768px) {
             .gallery-grid {
-                grid-template-columns: repeat(3, 1fr);
+                grid-template-columns: repeat(2, 1fr);
                 gap: 1rem;
             }
         }
@@ -521,13 +517,35 @@
             border-radius: 15px;
             overflow: hidden;
             border: 2px solid rgba(6, 182, 212, 0.3);
-            aspect-ratio: 1;
+            position: relative;
+            transition: all 0.3s;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.05);
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(6, 182, 212, 0.4);
         }
 
         .gallery-item img {
             width: 100%;
-            height: 100%;
+            height: 250px;
             object-fit: cover;
+            display: block;
+        }
+
+        .color-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(15, 23, 42, 0.95), transparent);
+            padding: 1.5rem 1rem 0.8rem;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1rem;
+            color: var(--light);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         /* Contact Form */
@@ -732,7 +750,7 @@
 
             <div class="product-grid">
                 <div class="product-card">
-                    <div class="product-image" style="background-image: url('yellow-gold.PNG');">
+                    <div class="product-image" style="background-image: url('Yellow_E.PNG');">
                         <span class="product-badge">STARTER</span>
                     </div>
                     <div class="product-info">
@@ -753,7 +771,7 @@
                 </div>
 
                 <div class="product-card">
-                    <div class="product-image" style="background-image: url('Red.PNG');">
+                    <div class="product-image" style="background-image: url('Pink_C.PNG');">
                         <span class="product-badge" style="background: linear-gradient(135deg, #8b5cf6, #06b6d4); color: white;">POPULAR</span>
                     </div>
                     <div class="product-info">
@@ -845,20 +863,75 @@
             </div>
         </section>
 
-        <!-- Page 4: Gallery -->
+        <!-- Page 4: Gallery with All Colors -->
         <section class="page" id="reviews">
-            <h2 class="section-title">Gallery</h2>
-            <p class="section-subtitle">See our beautiful tinsel work</p>
+            <h2 class="section-title">Color Gallery</h2>
+            <p class="section-subtitle">Browse our stunning color options - reference the letter when ordering!</p>
 
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="Capture.PNG" alt="Green Tinsel" style="object-fit: cover; transform: scale(1.8);">
+                    <img src="Pink_A.PNG" alt="Pink A">
+                    <div class="color-label">Pink - A</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="Red.PNG" alt="Red Tinsel">
+                    <img src="Pink_B.PNG" alt="Pink B">
+                    <div class="color-label">Pink - B</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="yellow-gold.PNG" alt="Yellow Tinsel">
+                    <img src="Pink_C.PNG" alt="Pink C">
+                    <div class="color-label">Pink - C</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Pink_C.PNG" alt="Red D" style="filter: hue-rotate(-10deg);">
+                    <div class="color-label">Red - D</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Yellow_E.PNG" alt="Yellow E">
+                    <div class="color-label">Yellow - E</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Yellow_E.PNG" alt="Yellow F">
+                    <div class="color-label">Yellow - F</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Capture.PNG" alt="Green G">
+                    <div class="color-label">Green - G</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Blue_H.PNG" alt="Blue H">
+                    <div class="color-label">Blue - H</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Blue_I.PNG" alt="Blue I">
+                    <div class="color-label">Blue - I</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Purple_J.PNG" alt="Purple J">
+                    <div class="color-label">Purple - J</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Gold_K.PNG" alt="Gold K">
+                    <div class="color-label">Gold - K</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Black_L.PNG" alt="Black L">
+                    <div class="color-label">Black - L</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Silver_M.PNG" alt="Silver M">
+                    <div class="color-label">Silver - M</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Irrrridecent_N.PNG" alt="Iridescent N">
+                    <div class="color-label">Iridescent - N</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Rainbow_O.PNG" alt="Rainbow O">
+                    <div class="color-label">Rainbow - O</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="Rainbow_P.PNG" alt="Rainbow P">
+                    <div class="color-label">Rainbow - P</div>
                 </div>
             </div>
         </section>
@@ -945,28 +1018,50 @@
         }
 
         if (isMobile) {
-            // Mobile: Swipe navigation
+            // Improved mobile swipe navigation
             let touchStartX = 0;
             let touchEndX = 0;
+            let touchStartY = 0;
+            let touchEndY = 0;
+            let isDragging = false;
 
             container.addEventListener('touchstart', (e) => {
                 touchStartX = e.changedTouches[0].screenX;
+                touchStartY = e.changedTouches[0].screenY;
+                isDragging = false;
+            }, { passive: true });
+
+            container.addEventListener('touchmove', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                touchEndY = e.changedTouches[0].screenY;
+                
+                const deltaX = Math.abs(touchEndX - touchStartX);
+                const deltaY = Math.abs(touchEndY - touchStartY);
+                
+                // Only start dragging if horizontal movement is greater than vertical
+                if (deltaX > deltaY && deltaX > 10) {
+                    isDragging = true;
+                }
             }, { passive: true });
 
             container.addEventListener('touchend', (e) => {
+                if (!isDragging) return;
+                
                 touchEndX = e.changedTouches[0].screenX;
                 handleSwipe();
             }, { passive: true });
 
             function handleSwipe() {
-                const swipeThreshold = 50;
+                const swipeThreshold = 75; // Increased threshold for better control
                 const diff = touchStartX - touchEndX;
 
                 if (Math.abs(diff) > swipeThreshold) {
                     if (diff > 0 && currentPage < totalPages - 1) {
+                        // Swipe left - next page
                         currentPage++;
                         updatePage();
                     } else if (diff < 0 && currentPage > 0) {
+                        // Swipe right - previous page
                         currentPage--;
                         updatePage();
                     }
@@ -979,6 +1074,20 @@
                     currentPage = index;
                     updatePage();
                 });
+            });
+
+            // Prevent page scrolling interfering with swipe on pages with content
+            const pages = document.querySelectorAll('.page');
+            pages.forEach((page) => {
+                let isScrolling = false;
+                
+                page.addEventListener('scroll', () => {
+                    isScrolling = true;
+                });
+
+                page.addEventListener('touchstart', () => {
+                    isScrolling = false;
+                }, { passive: true });
             });
         } else {
             // Desktop: Normal scroll with navbar
