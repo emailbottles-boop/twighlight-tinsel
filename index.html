@@ -210,7 +210,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('Capture.PNG');
+            background-image: url('colors.PNG');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
@@ -750,7 +750,7 @@
 
             <div class="product-grid">
                 <div class="product-card">
-                    <div class="product-image" style="background-image: url('Yellow_E.PNG');">
+                    <div class="product-image" style="background-image: url('yellow-gold.PNG');">
                         <span class="product-badge">STARTER</span>
                     </div>
                     <div class="product-info">
@@ -771,7 +771,7 @@
                 </div>
 
                 <div class="product-card">
-                    <div class="product-image" style="background-image: url('Pink_C.PNG');">
+                    <div class="product-image" style="background-image: url('Red.PNG');">
                         <span class="product-badge" style="background: linear-gradient(135deg, #8b5cf6, #06b6d4); color: white;">POPULAR</span>
                     </div>
                     <div class="product-info">
@@ -870,27 +870,27 @@
 
             <div class="gallery-grid">
                 <div class="gallery-item">
-                    <img src="Pink_A.PNG" alt="Pink A">
+                    <img src="Pink A.PNG" alt="Pink A">
                     <div class="color-label">Pink - A</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="Pink_B.PNG" alt="Pink B">
+                    <img src="Pink B.PNG" alt="Pink B">
                     <div class="color-label">Pink - B</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="Pink_C.PNG" alt="Pink C">
+                    <img src="Pink C.PNG" alt="Pink C">
                     <div class="color-label">Pink - C</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="Pink_C.PNG" alt="Red D" style="filter: hue-rotate(-10deg);">
+                    <img src="Red.PNG" alt="Red D">
                     <div class="color-label">Red - D</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="Yellow_E.PNG" alt="Yellow E">
+                    <img src="Yellow E.PNG" alt="Yellow E">
                     <div class="color-label">Yellow - E</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="Yellow_E.PNG" alt="Yellow F">
+                    <img src="Yellow f.PNG" alt="Yellow F">
                     <div class="color-label">Yellow - F</div>
                 </div>
                 <div class="gallery-item">
@@ -898,39 +898,39 @@
                     <div class="color-label">Green - G</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="Blue_H.PNG" alt="Blue H">
+                    <img src="Blue H.PNG" alt="Blue H">
                     <div class="color-label">Blue - H</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="Blue_I.PNG" alt="Blue I">
+                    <img src="Blue I.PNG" alt="Blue I">
                     <div class="color-label">Blue - I</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="Purple_J.PNG" alt="Purple J">
+                    <img src="Purple J.PNG" alt="Purple J">
                     <div class="color-label">Purple - J</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="Gold_K.PNG" alt="Gold K">
+                    <img src="Gold K.PNG" alt="Gold K">
                     <div class="color-label">Gold - K</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="Black_L.PNG" alt="Black L">
+                    <img src="Black L.PNG" alt="Black L">
                     <div class="color-label">Black - L</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="Silver_M.PNG" alt="Silver M">
+                    <img src="Silver M.PNG" alt="Silver M">
                     <div class="color-label">Silver - M</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="Irrrridecent_N.PNG" alt="Iridescent N">
+                    <img src="Irrridecent N.PNG" alt="Iridescent N">
                     <div class="color-label">Iridescent - N</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="Rainbow_O.PNG" alt="Rainbow O">
+                    <img src="Rainbow O.PNG" alt="Rainbow O">
                     <div class="color-label">Rainbow - O</div>
                 </div>
                 <div class="gallery-item">
-                    <img src="Rainbow_P.PNG" alt="Rainbow P">
+                    <img src="Rainbow P.PNG" alt="Rainbow P">
                     <div class="color-label">Rainbow - P</div>
                 </div>
             </div>
@@ -1101,10 +1101,10 @@
             });
         }
 
-        // Pixie Dust Entrance Animation
+        // Pixie Dust Entrance Animation - Toned Down
         window.addEventListener('load', function() {
             const container = document.getElementById('pixieContainer');
-            const colors = ['#06b6d4', '#8b5cf6', '#fbbf24', '#10b981', '#ec4899'];
+            const colors = ['#06b6d4', '#8b5cf6', '#fbbf24'];
             
             function createSparkle(x, y) {
                 const sparkle = document.createElement('div');
@@ -1112,61 +1112,64 @@
                 sparkle.style.left = x + 'px';
                 sparkle.style.top = y + 'px';
                 sparkle.style.background = `radial-gradient(circle, ${colors[Math.floor(Math.random() * colors.length)]}, transparent)`;
-                sparkle.style.boxShadow = `0 0 20px ${colors[Math.floor(Math.random() * colors.length)]}`;
+                sparkle.style.boxShadow = `0 0 15px ${colors[Math.floor(Math.random() * colors.length)]}`;
                 
-                const tx = (Math.random() - 0.5) * 400;
-                const ty = (Math.random() - 0.5) * 400;
+                const tx = (Math.random() - 0.5) * 200;
+                const ty = (Math.random() - 0.5) * 200;
                 sparkle.style.setProperty('--tx', tx + 'px');
                 sparkle.style.setProperty('--ty', ty + 'px');
                 
                 container.appendChild(sparkle);
-                setTimeout(() => sparkle.remove(), 2000);
+                setTimeout(() => sparkle.remove(), 1500);
             }
             
             function createStarBurst(x, y) {
-                const stars = ['✨', '⭐', '💫', '🌟', '✦'];
+                const stars = ['✨', '⭐'];
                 const star = document.createElement('div');
                 star.className = 'star-burst';
                 star.textContent = stars[Math.floor(Math.random() * stars.length)];
                 star.style.left = x + 'px';
                 star.style.top = y + 'px';
                 
-                const tx = (Math.random() - 0.5) * 300;
-                const ty = (Math.random() - 0.5) * 300;
+                const tx = (Math.random() - 0.5) * 150;
+                const ty = (Math.random() - 0.5) * 150;
                 star.style.setProperty('--tx', tx + 'px');
                 star.style.setProperty('--ty', ty + 'px');
                 
                 container.appendChild(star);
-                setTimeout(() => star.remove(), 1800);
+                setTimeout(() => star.remove(), 1500);
             }
             
             const centerX = window.innerWidth / 2;
             const centerY = window.innerHeight / 2;
             
-            for (let burst = 0; burst < 4; burst++) {
+            // Just 2 bursts instead of 4
+            for (let burst = 0; burst < 2; burst++) {
                 setTimeout(() => {
-                    for (let i = 0; i < 20; i++) {
-                        const angle = (Math.PI * 2 * i) / 20;
-                        const radius = 50 + burst * 30;
+                    // Reduced from 20 to 8 sparkles
+                    for (let i = 0; i < 8; i++) {
+                        const angle = (Math.PI * 2 * i) / 8;
+                        const radius = 40 + burst * 25;
                         const x = centerX + Math.cos(angle) * radius;
                         const y = centerY + Math.sin(angle) * radius;
                         createSparkle(x, y);
                     }
                     
-                    for (let i = 0; i < 8; i++) {
-                        const angle = (Math.PI * 2 * i) / 8;
-                        const radius = 80 + burst * 40;
+                    // Reduced from 8 to 3 stars
+                    for (let i = 0; i < 3; i++) {
+                        const angle = (Math.PI * 2 * i) / 3;
+                        const radius = 60 + burst * 30;
                         const x = centerX + Math.cos(angle) * radius;
                         const y = centerY + Math.sin(angle) * radius;
                         createStarBurst(x, y);
                     }
-                }, burst * 200);
+                }, burst * 300);
             }
             
             setTimeout(() => {
                 document.getElementById('shimmer').remove();
                 document.getElementById('pixieContainer').remove();
-            }, 3000);
+            }, 2000);
         });
     </script>
 </body>
